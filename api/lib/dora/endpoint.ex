@@ -37,4 +37,6 @@ defmodule Dora.Endpoint do
     signing_salt: "sFssv6L7"
 
   plug Dora.Router
+
+  plug CORSPlug
 end

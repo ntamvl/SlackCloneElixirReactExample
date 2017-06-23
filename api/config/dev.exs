@@ -29,3 +29,6 @@ config :dora, Dora.Repo,
   database: "dora_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :guardian, Guardian,
+  secret_key: "kDQtHD4wudBg9DxTlum4VvRStYXTjJBO9XHcCfR6vIC8FaPkD9qRURhzBdBQcn3B"
