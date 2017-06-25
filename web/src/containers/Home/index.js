@@ -6,6 +6,10 @@ import { logout } from '../../actions/session';
 import Navbar from '../../components/Navbar';
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.handleLogout = this.handleLogout.bind(this);
+  }
 
   handleLogout() {
     this.props.logout(this.context.router);

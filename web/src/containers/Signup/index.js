@@ -6,6 +6,10 @@ import SignupForm from '../../components/SignupForm';
 import Navbar from '../../components/Navbar';
 
 class Signup extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSignup = this.handleSignup.bind(this);
+  }
 
   handleSignup(data) {
     this.props.signup(data, this.context.router);

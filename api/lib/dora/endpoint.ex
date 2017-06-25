@@ -36,7 +36,7 @@ defmodule Dora.Endpoint do
     key: "_dora_key",
     signing_salt: "sFssv6L7"
 
-  plug Dora.Router
-
   plug CORSPlug
+
+  plug Dora.Router
 end

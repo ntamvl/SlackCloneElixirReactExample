@@ -6,6 +6,10 @@ import LoginForm from '../../components/LoginForm';
 import Navbar from '../../components/Navbar';
 
 class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.handleLogin = this.handleLogin.bind(this);
+  }
 
   handleLogin(data) {
     this.props.login(data, this.context.router);

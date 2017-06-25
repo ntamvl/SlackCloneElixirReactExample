@@ -15,7 +15,7 @@ defmodule Dora.Router do
     plug Guardian.Plug.LoadResource
   end
 
-  scope "/", Sling do
+  scope "/", Dora do
     pipe_through :browser
 
     get "/", PageController, :index

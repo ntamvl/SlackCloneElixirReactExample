@@ -23,10 +23,10 @@ config :logger, :console,
   metadata: [:request_id]
 
 config :guardian, Guardian,
-  issuer: "Sling",
+  issuer: "Dora",
   ttl: {30, :days},
   verify_issuer: true,
-  serializer: Sling.GuardianSerializer
+  serializer: Dora.GuardianSerializer
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

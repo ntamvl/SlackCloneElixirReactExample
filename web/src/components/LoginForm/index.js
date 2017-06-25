@@ -14,6 +14,10 @@ const styles = StyleSheet.create({
 });
 
 class LoginForm extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
   handleSubmit(data) {
     this.props.onSubmit(data);
