@@ -1,0 +1,8 @@
+run_erl [22897] Thu Jun 29 10:17:58 2017
+Args before exec of shell:
+run_erl [22897] Thu Jun 29 10:17:58 2017
+argv[0] = sh
+run_erl [22897] Thu Jun 29 10:17:58 2017
+argv[1] = -c
+run_erl [22897] Thu Jun 29 10:17:58 2017
+argv[2] = exec "/Users/tamnguyen/Projects/learning/Phoenix/sling/api/rel/dora/bin/dora" "console"

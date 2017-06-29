@@ -13,7 +13,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :dora, Dora.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "example.com", port: 80],
+  url: [host: "localhost", port: 4001],
   cache_static_manifest: "priv/static/manifest.json"
 
 # Do not print debug messages in production
@@ -58,4 +58,12 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-import_config "prod.secret.exs"
+# import_config "prod.secret.exs"
+
+config :dora, Dora.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: "postgres",
+  password: "nguyen",
+  database: "dora_dev",
+  hostname: "localhost",
+  pool_size: 10

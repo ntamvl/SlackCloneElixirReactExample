@@ -38,7 +38,8 @@ defmodule Dora.Mixfile do
      {:cowboy, "~> 1.0"},
      {:comeonin, "~> 2.5"},
      {:guardian, "~> 0.13.0"},
-     {:cors_plug, "~> 1.1"}]
+     {:cors_plug, "~> 1.1"},
+     {:exrm, "~> 1.0"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

@@ -3,6 +3,8 @@ defmodule Dora.UserController do
 
   alias Dora.User
 
+  plug Guardian.Plug.EnsureAuthenticated, [handler: Dora.SessionController] when action in [:rooms]
+
   def create(conn, params) do
     changeset = User.registration_changeset(%User{}, params)
 
@@ -14,11 +16,17 @@ defmodule Dora.UserController do
         new_conn
         |> put_status(:created)
         |> render(Dora.SessionView, "show.json", user: user, jwt: jwt)
-        
+
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
         |> render(Dora.ChangesetView, "error.json", changeset: changeset)
     end
+  end
+
+  def rooms(conn, _params) do
+    current_user = Guardian.Plug.current_resource(conn)
+    rooms = Repo.all(assoc(current_user, :rooms))
+    render(conn, Dora.RoomView, "index.json", %{rooms: rooms})
   end
 end

@@ -27,7 +27,15 @@ defmodule Dora.Router do
     delete "/sessions", SessionController, :delete
     post "/sessions/refresh", SessionController, :refresh
     resources "/users", UserController, only: [:create]
+
+    get "/users/:id/rooms", UserController, :rooms
+    # resources "/rooms", RoomController, only: [:index, :create]
+    get "/rooms", RoomController, :index
+    post "/rooms", RoomController, :create
+    options "/rooms", RoomController, :create
+    post "/rooms/:id/join", RoomController, :join
   end
 
-  resources "/users", UserController, except: [:new, :edit]
+  # resources "/users", UserController, except: [:new, :edit]
+  # resources "/rooms", RoomController, except: [:new, :edit]
 end

@@ -44,6 +44,7 @@ defmodule Dora.SessionController do
   end
 
   def unauthenticated(conn, _params) do
+    IO.puts "Starting to authenticate..."
     conn
     |> put_status(:forbidden)
     |> render(Dora.SessionView, "forbidden.json", error: "Not Authenticated")
